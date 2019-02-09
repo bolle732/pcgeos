@@ -3,14 +3,16 @@
 #
 # If you edit it, you will lose your changes, should it be regenerated.
 #
-GEODE           = profpnt
+GEODE           = impdoc
 ASM_TO_OBJS     =
 UI_TO_RDFS      =
-SRCS            = ProfPnt.goc
-OBJS            = ProfPnt.obj
+SRCS            = impdoc.goc
+OBJS            = impdoc.obj
 LOBJS           =
 LIBOBJ          = $(DEVEL_DIR)/Include/$(GEODE).ldf
-LIBNAME         = profpnt
+LIBNAME         = impdoc
+
+PRODUCTS        = DBCS 
 
 SYSMAKEFILE     = geode.mk
 
@@ -25,4 +27,8 @@ SYSMAKEFILE     = geode.mk
 
 #if exists($(DEPFILE))
 #include "$(DEPFILE)"
+#endif
+
+#if exists(DBCS/$(DEPFILE))
+#include "DBCS/$(DEPFILE)"
 #endif
