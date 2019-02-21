@@ -63,12 +63,12 @@ minimalLibrary	: kernel swap sound net ui isui motif spool text mailbox \
 		  saver prefLibs accpnt netutils \
 		  socket dhcp borlandrtl ffile streamc mailhub mailsmtp \
 		  mailpop3 lot123ss csv \
-		  parentc wmlib \
+		  parentc wmlib rtf \
 		  jpeg giflib gif htmlimpx n2txt inetmsg extui \
 		  winword8 zlib dirlist minizip idialc eps impex_libs \
 		  thumbdb ftplib flllib sitelist int8087 intx87\
 		  basicdb gridlib gsol treplib
-# cdaudio rtf ascii
+# cdaudio ascii
 
 prefLibs	: prefvid preftd \
 		  prefsnd prefos prefmous preflo preflf prefkbd \
@@ -91,7 +91,7 @@ extraPrefLibs	: prefpag prefjfep
 #
 minimalAppl	: minimalGame minimalUtils minimalTools minimalSavers \
 		  minimalEdu calendar geodex geocalc geodraw geowrite \
-		  scrapbk clock bigcalc \
+		  scrapbk clock bigcalc geopoint \
 		  email manager isdesk linktool setup \
 		  launcher webmagick idialup \
 		  charm wordmat banner \
@@ -116,8 +116,7 @@ minimalSavers	: lol blackhole blank bobbin circles dribble dust \
 minimalTools	: prntscrn
 
 otherEnsemble	: conview reader term tedit geofile dirls  \
-		   graphvwr macror dump perf
-# bim ffind
+		   graphvwr macror dump perf bim ffind
 # bbxcd
 #geocon3
 #webbox
@@ -133,12 +132,13 @@ otherEnsemble	: conview reader term tedit geofile dirls  \
 
 minimalDriver	: nimbus ms4 ntfat os2 cdrom stream dri gdi keyboard modem gdipointer \
 		  standard winnt parallel serial disk vidmem svga \
-		  vga vga8 vga16 ega cga mcga hgc att6300 dscga printerDriver \
+		  vga vga8 vga15 vga16 vga24 ega cga mcga hgc att6300 dscga \
+		  printerDriver \
 		  ps2 msys msser msbus kbmouse absgen genmouse emm extmem \
 		  xms filestr nonts sblaster comm spooltd \
 		  vmtree filedd logibus logiser dma mslf kbd_drivers \
-		  etherodi msnet
-# cdados
+		  etherodi etherpkt msnet cdados
+
 printerDriver	: deskjet dj500c lbp mercury pcl4 quietjet canon48 \
 		  canonbjc  epshi24 epson24 epson48 nec24 \
 		  ppds24 tosh24 pscript dumb diablo citoh9 prop9 \
@@ -251,7 +251,7 @@ csv	: Installed/Library/Trans/Database/CSV
 Installed/Library/Trans/Database/CSV:	ui impex ssmeta MAKELIB
 
 rtf	: Installed/Library/Breadbox/Impex/RTF
-INstalled/Library/Breadbox/Impex/RTF: 	ui impex text ansic MAKELIB
+Installed/Library/Breadbox/Impex/RTF: 	ui impex text ansic MAKELIB
 
 jpeg	: Installed/Library/Breadbox/Impex/JPEG
 Installed/Library/Breadbox/Impex/JPEG: ui impex ansic ijgjpeg math MAKELIB
@@ -601,11 +601,20 @@ Installed/Driver/Video/VGAlike/VGA:	MAKEDRV
 vga8	: Installed/Driver/Video/VGAlike/VGA8
 Installed/Driver/Video/VGAlike/VGA8:	MAKEDRV
 
+vga15	: Installed/Driver/Video/VGAlike/VGA15
+Installed/Driver/Video/VGAlike/VGA15:	MAKEDRV
+
 vga16	: Installed/Driver/Video/VGAlike/VGA16
 Installed/Driver/Video/VGAlike/VGA16:	MAKEDRV
 
+vga24	: Installed/Driver/Video/VGAlike/VGA24
+Installed/Driver/Video/VGAlike/VGA24:	MAKEDRV
+
 etherodi	: Installed/Driver/Socket/EtherODI
 Installed/Driver/Socket/EtherODI:	socket accpnt MAKEDRV
+
+etherpkt	: Installed/Driver/Socket/EtherPKT
+Installed/Driver/Socket/EtherPKT:	socket accpnt MAKEDRV
 
 # International Keyboard Drivers
 kbd_drivers : kbdb_cf kbde_cf kbd_csa kbde_df kbdn_df kbde_be kbd_dvrk  \
@@ -843,6 +852,9 @@ geodraw	: Installed/Appl/GeoDraw
 Installed/Appl/GeoDraw:		ui spool ruler text spline grobj chart \
 				bitmap spell color convert MAKEAPPL
 
+geopoint	: Installed/Appl/GeoPoint
+Installed/Appl/GeoPoint:		ui ansic text color MAKEAPPL
+
 geowrite	: Installed/Appl/GeoWrite
 Installed/Appl/GeoWrite:	ui spool ruler text spline grobj chart \
 				bitmap spell color impex styles ssmeta \
@@ -1034,7 +1046,7 @@ Installed/Appl/Saver/Hopalong:			saver config MAKEAPPL
 Installed/Appl/Saver/Hopalong/HopalongPref:	saver config MAKEAPPL
 
 lastwords	: 	Installed/Appl/Saver/LastWords \
-			Installed/Appl/Saver/LastWords
+			Installed/Appl/Saver/LWPref
 Installed/Appl/Saver/LastWords:			saver config MAKEAPPL
 Installed/Appl/Saver/LWPref:			saver config MAKEAPPL
 
