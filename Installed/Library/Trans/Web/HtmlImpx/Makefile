@@ -5,14 +5,14 @@
 #
 GEODE           = htmlimpx
 HTMLIMPT        = htmlimptManager.asm htmlimpt.ui
-IMPTPROC        = imptproc.goc
 EXPTROC         = exptproc.goc
+IMPTPROC        = imptproc.goc
 UI_TO_RDFS      = htmlimpt.ui
-OBJS            = imptproc.obj exptproc.obj
+OBJS            = exptproc.obj imptproc.obj
 COMMON          =
 MODULES         = htmlimpt
-CMODULES        = imptproc exptroc
-SRCS            = $(HTMLIMPT) $(IMPTPROC) $(EXPTROC) $(COMMON)
+CMODULES        = exptroc imptproc
+SRCS            = $(HTMLIMPT) $(EXPTROC) $(IMPTPROC) $(COMMON)
 LOBJS           =
 LIBOBJ          = $(DEVEL_DIR)/Include/$(GEODE).ldf
 LIBNAME         = htmlimpx

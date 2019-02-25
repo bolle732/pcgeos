@@ -3,20 +3,20 @@
 #
 # If you edit it, you will lose your changes, should it be regenerated.
 #
-GEODE           = WEBBOX
+GEODE           = webbox
 ASM_TO_OBJS     =
 UI_TO_RDFS      =
-SRCS            = BSTRINGS.GOC MEN1STR.GOC MEN2STR.GOC MSGBUTON.GOC\
-                  MSGMENU1.GOC MSGMENU2.GOC MSGMENU3.GOC MSGMENU4.GOC\
-                  MSGPRIM.GOC MSGPROC.GOC MSGSPTAG.GOC TEXT.GOC UIABOUT.GOC\
-                  UIBUTTON.GOC UIMENU1.GOC UIMENU2.GOC UISPTAG.GOC\
-                  UISTAT.GOC BBXWEBED.GOH BBXWEBVU.GOH BREADBOX.GOH\
-                  BSTRINGS.GOH GLOBAL.GOH MEN1STR.GOH MEN2STR.GOH APP.GOH
-OBJS            = BSTRINGS.obj MEN1STR.obj MEN2STR.obj MSGBUTON.obj\
-                  MSGMENU1.obj MSGMENU2.obj MSGMENU3.obj MSGMENU4.obj\
-                  MSGPRIM.obj MSGPROC.obj MSGSPTAG.obj TEXT.obj UIABOUT.obj\
-                  UIBUTTON.obj UIMENU1.obj UIMENU2.obj UISPTAG.obj\
-                  UISTAT.obj
+SRCS            = bstrings.goc men1str.goc men2str.goc msgbuton.goc\
+                  msgmenu1.goc msgmenu2.goc msgmenu3.goc msgmenu4.goc\
+                  msgprim.goc msgproc.goc msgsptag.goc text.goc uiabout.goc\
+                  uibutton.goc uimenu1.goc uimenu2.goc uisptag.goc\
+                  uistat.goc app.goh bstrings.goh global.goh men1str.goh\
+                  men2str.goh
+OBJS            = bstrings.obj men1str.obj men2str.obj msgbuton.obj\
+                  msgmenu1.obj msgmenu2.obj msgmenu3.obj msgmenu4.obj\
+                  msgprim.obj msgproc.obj msgsptag.obj text.obj uiabout.obj\
+                  uibutton.obj uimenu1.obj uimenu2.obj uisptag.obj\
+                  uistat.obj
 LOBJS           =
 
 SYSMAKEFILE     = geode.mk

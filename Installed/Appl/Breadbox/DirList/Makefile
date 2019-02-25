@@ -3,10 +3,10 @@
 #
 # If you edit it, you will lose your changes, should it be regenerated.
 #
-GEODE           = DIRLIST
+GEODE           = dirlist
 ASM_TO_OBJS     =
 UI_TO_RDFS      =
-SRCS            = dirlist.goc dirlistIcon.goh
+SRCS            = dirlist.goc bbxreg.goh dirlistIcon.goh
 OBJS            = dirlist.obj
 LOBJS           =
 
