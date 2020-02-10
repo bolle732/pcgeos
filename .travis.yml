@@ -1,13 +1,15 @@
 language: minimal
 os: linux
+arch: amd64
 script:
+- sudo apt-get remove --auto-remove qt4-default
 - wget https://github.com/open-watcom/open-watcom-v2/releases/download/Current-build/ow-snapshot.tar.gz
 - gzip -d ow-snapshot.tar.gz
 - mkdir _watcom
 - cd _watcom
 - tar -xf ../ow-snapshot.tar
 - cd ..
-- export PATH=$PATH:$TRAVIS_BUILD_DIR/_watcom/binl64:$TRAVIS_BUILD_DIR/bin
+- export PATH=$TRAVIS_BUILD_DIR/bin:$PATH:$TRAVIS_BUILD_DIR/_watcom/binl64
 - export WATCOM=$TRAVIS_BUILD_DIR/_watcom
 - export ROOT_DIR=$TRAVIS_BUILD_DIR
 - cd $TRAVIS_BUILD_DIR/Tools/pmake/pmake
@@ -16,4 +18,6 @@ script:
 - pmake install
 - cd $TRAVIS_BUILD_DIR/Installed
 - pmake
+- cd $TRAVIS_BUILD_DIR/Tools/build/product/bbxensem/Scripts
+- buildbbx
 
