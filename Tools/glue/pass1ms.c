@@ -291,7 +291,6 @@ Pass1MSLayoutLMem(const char *file,
     word    	    *handle;
     MSObjLMemData   *lmd, **lmdPtr;
 
-printf("Pass1MSLayoutLMem\n"); fflush(stdout);
     lmd = NULL;
 
     /*
@@ -1568,8 +1567,6 @@ Pass1MS_ProcessObject(const char  *file,
 	    continue;
 	}
 
-	printf("rec no: %d, len: %d, type: %d\r\n", recno, reclen, rectype);
-
         switch(rectype) {
 	    case MO_THEADR: {
 		/*
@@ -1602,8 +1599,10 @@ Pass1MS_ProcessObject(const char  *file,
 		    /*
 		     *
 	   	     */
-		    Pass1MSReplaceFileName(msobj_CurFileName, newName);
+		    if(newName != msobj_CurFileName) {
+			Pass1MSReplaceFileName(msobj_CurFileName, newName);
 						msobj_CurFileName = newName;
+		    }
 		}		
 		break;
 	    case MO_MODEND:
@@ -2225,10 +2224,8 @@ Pass1MS_ProcessObject(const char  *file,
 		     * run-time relocations that'll be required for this
 		     * record. Yech.
 		     */
-			printf("++Pass1MS_CountRels\r\n");
 		    sd->nrel += Pass1MS_CountRels(file, rectype, sd, startOff,
 						  reclen, bp);
-			printf("--Pass1MS_CountRels\r\n");
 		}
 
 		/*

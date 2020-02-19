@@ -1226,7 +1226,7 @@ Installed/Driver/Socket/PPP:	netutils ansic accpnt MAKELIB
 # WebMagick app
 
 webmagick	: 	Installed/Appl/Breadbox/BbxBrow
-Installed/Appl/Breadbox/BbxBrow:	ui ansic text spool html4par \
+Installed/Appl/Breadbox/BbxBrow:	ui ansic text spool \
 		  			wmg3http wmg3ftp wmg3ext \
 		  			impgraph impdoc \
 		  			modem \
@@ -1258,7 +1258,7 @@ Installed/Appl/Breadbox/BbxBrow:	ui ansic text spool html4par \
 #	$(MAKE) -I$(ROOT_DIR)\Library\Breadbox\html3par lib full
 
 html4par	: Installed/Library/Breadbox/Html4Par
-Installed/Library/Breadbox/Html4Par:	ui ansic text extgraph MAKELIB
+Installed/Library/Breadbox/Html4Par:	kernel ui ansic text extgraph MAKELIB
 
 profpnt		: Installed/Library/ProfPnt
 Installed/Library/ProfPnt:		ansic MAKELIB
