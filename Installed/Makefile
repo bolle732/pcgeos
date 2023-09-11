@@ -1329,6 +1329,10 @@ tcpip	: Installed/Driver/Socket/TCPIP
 Installed/Driver/Socket/TCPIP:	netutils socket ansic resolver accpnt \
 				MAKELIB
 
+hsttcpip	: Installed/Driver/Socket/HstTCPIP
+Installed/Driver/Socket/HstTCPIP:	netutils socket ansic resolver accpnt \
+				MAKELIB
+
 ppp	: Installed/Driver/Socket/PPP
 Installed/Driver/Socket/PPP:	netutils ansic accpnt MAKELIB
 
@@ -1341,7 +1345,7 @@ Installed/Appl/Breadbox/BbxBrow:	ui ansic text spool \
 					modem \
 					ibms parentc wav mailhub socket \
 					js netutils cookies idialc \
-					ppp  tcpip MAKEAPPL
+					ppp  tcpip hsttcpip MAKEAPPL
 
 # sorry, executing CLEAN in the global makefile is not only bad style, it forces
 # EVERYONE, even people not working on the browser, to compile the whole stuff
@@ -1403,13 +1407,13 @@ Installed/Library/SSL:				ansic socket mapheap MAKELIB
 
 # product-specific dependency on fjpeg
 impgraph	: Installed/Library/Breadbox/ImpGraph
-Installed/Library/Breadbox/ImpGraph:		ansic ijgjpeg MAKELIB #fjpeg
+Installed/Library/Breadbox/ImpGraph:		ansic ijgjpeg fjpeg MAKELIB 
 
 ijgjpeg	: 	Installed/Library/Breadbox/Ijgjpeg
 Installed/Library/Breadbox/Ijgjpeg:		ui ansic MAKELIB
 
-#fjpeg	: 	Installed/Library/Breadbox/fjpeg
-#Installed/Library/Breadbox/fjpeg:		ui ansic MAKELIB
+fjpeg	: 	Installed/Library/Breadbox/Fjpeg
+Installed/Library/Breadbox/Fjpeg:		ui ansic MAKELIB
 #	mdcd %ROOT_DIR%\
 #	$(MAKE) -I$(ROOT_DIR)\Library\Breadbox\fjpeg lib full
 
